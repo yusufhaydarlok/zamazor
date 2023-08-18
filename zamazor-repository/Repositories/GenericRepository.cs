@@ -41,7 +41,7 @@ namespace zamazor_repository.Repositories
             return _dbSet.AsNoTracking().AsQueryable();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }

@@ -10,7 +10,7 @@ namespace zamazor_core.Services
 {
     public interface IService<T, R> where T : BaseEntity where R : class
     {
-        Task<R> GetByIdAsync(int id);
+        Task<R> GetByIdAsync(Guid id);
         Task<IEnumerable<R>> GetAllAsync();
         IQueryable<R> Where(Expression<Func<T, bool>> expression);
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression);

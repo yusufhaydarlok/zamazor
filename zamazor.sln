@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zamazor-api", "zamazor-api\zamazor-api.csproj", "{3A74869A-99CE-4D17-9FE6-241EE822776B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zamazor-api", "zamazor-api\zamazor-api.csproj", "{3A74869A-99CE-4D17-9FE6-241EE822776B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zamazor-core", "zamazor-core\zamazor-core.csproj", "{350A4887-42B8-4C6A-A694-6B21D4CA6979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zamazor-core", "zamazor-core\zamazor-core.csproj", "{350A4887-42B8-4C6A-A694-6B21D4CA6979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zamazor-repository", "zamazor-repository\zamazor-repository.csproj", "{08A1FA93-7AC8-474F-9E33-31F92C9C560E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zamazor-repository", "zamazor-repository\zamazor-repository.csproj", "{08A1FA93-7AC8-474F-9E33-31F92C9C560E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zamazor-service", "zamazor-service\zamazor-service.csproj", "{88388728-0D24-4D45-8648-6CD7A361988B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zamazor-service", "zamazor-service\zamazor-service.csproj", "{88388728-0D24-4D45-8648-6CD7A361988B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

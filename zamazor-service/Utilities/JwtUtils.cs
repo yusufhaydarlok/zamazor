@@ -80,7 +80,7 @@ namespace zamazor_service.Utilities
         internal async Task SetRefreshToken(RefreshToken newRefreshToken, HttpResponse httpResponse)
         {
             var userId = GetMyId();
-            var user = await _repository.GetByIdAsync(int.Parse(userId));
+            var user = await _repository.GetByIdAsync(Guid.Parse(userId));
 
             var cookieOptions = new CookieOptions
             {

@@ -11,6 +11,6 @@ namespace zamazor_core.Services
 {
     public interface ICategoryService : IService<Category, CategoryDto>
     {
-        public Task<CustomResponseDto<CategoryWithProductsDto>> GetSingleCategoryByIdWithProductsAsync(int categoryId);
+        public Task<CustomResponseDto<CategoryWithProductsDto>> GetSingleCategoryByIdWithProductsAsync(Guid categoryId);
     }
 }
