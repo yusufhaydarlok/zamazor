@@ -15,7 +15,7 @@ namespace zamazor_repository.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
-            builder.Property(x => x.EmailAddress).HasMaxLength(200);
+            builder.Property(x => x.Email).HasMaxLength(200);
             builder.Property(x => x.PhoneNumber).HasMaxLength(20);
             builder.Property(x => x.Address).HasMaxLength(500);
             builder.ToTable("Companies");

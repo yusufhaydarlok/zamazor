@@ -9,18 +9,46 @@ using zamazor_core.Models;
 
 namespace zamazor_repository.Seeds
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductSeed : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.ProductName).IsRequired().HasMaxLength(200);
-            builder.Property(x => x.StockCode).HasMaxLength(50);
-            builder.Property(x => x.PurchasePrice).HasColumnType("decimal(18,2)");
-            builder.Property(x => x.SalePrice).HasColumnType("decimal(18,2)");
-            builder.ToTable("Products");
-            builder.HasOne(x => x.Supplier).WithMany().HasForeignKey(x => x.SupplierId);
-            builder.HasOne(x => x.Category).WithMany().HasForeignKey(x => x.CategoryId);
+            builder.HasData(
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    ProductName = "Smartphone",
+                    StockCode = "SPH123",
+                    PurchasePrice = 300.00m,
+                    SalePrice = 450.00m,
+                    SupplierId = Guid.NewGuid(),
+                    CategoryId = Guid.NewGuid()
+                },
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    ProductName = "Laptop",
+                    StockCode = "LTP456",
+                    PurchasePrice = 800.00m,
+                    SalePrice = 1100.00m,
+                    SupplierId = Guid.NewGuid(),
+                    CategoryId = Guid.NewGuid()
+                },
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    ProductName = "T-Shirt",
+                    StockCode = "TSH789",
+                    PurchasePrice = 10.00m,
+                    SalePrice = 20.00m,
+                    SupplierId = Guid.NewGuid(),
+                    CategoryId = Guid.NewGuid()
+                }
+            );
         }
     }
+
 }

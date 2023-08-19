@@ -17,7 +17,7 @@ namespace zamazor_repository.Seeds
                 new Category { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Teknoloji" },
                 new Category { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Araba" },
                 new Category { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Tekstil" }
-                );
+            );
         }
     }
 }

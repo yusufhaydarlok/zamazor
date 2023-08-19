@@ -14,8 +14,24 @@ namespace zamazor_repository.Seeds
         public void Configure(EntityTypeBuilder<Company> builder)
         {
             builder.HasData(
-            new Role { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Admin" },
-            new Role { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "User" }
+                new Company
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    Name = "Trendyol",
+                    Email = "trendyol@trendyol.com",
+                    PhoneNumber = "1234567890",
+                    Address = "123 Trendyol"
+                },
+                new Company
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    Name = "Hepsiburada",
+                    Email = "hepsiburada@hepsiburada.com",
+                    PhoneNumber = "9876543210",
+                    Address = "456 Hepsiburada"
+                }
             );
         }
     }

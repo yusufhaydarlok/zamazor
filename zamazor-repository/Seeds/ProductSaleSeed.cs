@@ -9,17 +9,43 @@ using zamazor_core.Models;
 
 namespace zamazor_repository.Seeds
 {
-    public class ProductSaleConfiguration : IEntityTypeConfiguration<ProductSale>
+    public class ProductSaleSeed : IEntityTypeConfiguration<ProductSale>
     {
         public void Configure(EntityTypeBuilder<ProductSale> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.QuantitySold).IsRequired();
-            builder.Property(x => x.SaleDate).IsRequired();
-            builder.Property(x => x.UnitPrice).HasColumnType("decimal(18,2)");
-            builder.Property(x => x.TotalProfit).HasColumnType("decimal(18,2)");
-            builder.ToTable("ProductSales");
-            builder.HasOne(x => x.SoldByUser).WithMany().HasForeignKey(x => x.SoldByUserId);
+            builder.HasData(
+                new ProductSale
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    SaleDate = DateTime.Now.AddDays(-10),
+                    QuantitySold = 50,
+                    UnitPrice = 15.99m,
+                    TotalProfit = 400.00m,
+                    SoldByUserId = Guid.NewGuid()
+                },
+                new ProductSale
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    SaleDate = DateTime.Now.AddDays(-5),
+                    QuantitySold = 20,
+                    UnitPrice = 12.49m,
+                    TotalProfit = 200.00m,
+                    SoldByUserId = Guid.NewGuid()
+                },
+                new ProductSale
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedDate = DateTime.Now,
+                    SaleDate = DateTime.Now,
+                    QuantitySold = 100,
+                    UnitPrice = 9.99m,
+                    TotalProfit = 800.00m,
+                    SoldByUserId = Guid.NewGuid()
+                }
+            );
         }
     }
+
 }

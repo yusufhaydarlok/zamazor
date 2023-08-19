@@ -15,8 +15,8 @@ namespace zamazor_repository.Seeds
         public void Configure(EntityTypeBuilder<Warehouse> builder)
         {
             builder.HasData(
-            new Warehouse { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Main Warehouse", CompanyId = Guid.NewGuid() },
-            new Warehouse { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Main Warehouse", CompanyId = Guid.NewGuid() }
+            new Warehouse { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Trendyol Warehouse", CompanyId = Guid.NewGuid() },
+            new Warehouse { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Hepsiburada Warehouse", CompanyId = Guid.NewGuid() }
             );
         }
     }
