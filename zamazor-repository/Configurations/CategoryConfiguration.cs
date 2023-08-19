@@ -14,9 +14,9 @@ namespace zamazor_repository.Configurations
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasDefaultValueSql("uuid_generate_v4()");
+            builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
-            builder.ToTable("Category");
+            builder.ToTable("Categories");
         }
     }
 }
