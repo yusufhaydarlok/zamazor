@@ -15,9 +15,9 @@ namespace zamazor_core.Models
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public Guid RoleId { get; set; }
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
         public Guid CompanyId { get; set; }
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
         public string RefreshToken { get; set; } = string.Empty;
         public DateTime TokenCreated { get; set; } = DateTime.Now;
         public DateTime TokenExpires { get; set; }

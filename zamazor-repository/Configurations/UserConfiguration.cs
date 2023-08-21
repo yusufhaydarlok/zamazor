@@ -15,7 +15,6 @@ namespace zamazor_repository.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.HasIndex(d => new { d.Id, d.Email }).IsUnique();
-            builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Username).IsRequired().HasMaxLength(200);
             builder.ToTable("Users");
             builder.HasOne(x => x.Role).WithMany(x => x.Users).HasForeignKey(x => x.RoleId);

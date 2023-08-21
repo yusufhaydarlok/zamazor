@@ -14,7 +14,7 @@ namespace zamazor_repository.Configurations
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.ProductName).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
             builder.Property(x => x.StockCode).HasMaxLength(50);
             builder.Property(x => x.PurchasePrice).HasColumnType("decimal(18,2)");
             builder.Property(x => x.SalePrice).HasColumnType("decimal(18,2)");
