@@ -319,7 +319,7 @@ namespace zamazor_repository.Migrations
             modelBuilder.Entity("zamazor_core.Models.Product", b =>
                 {
                     b.HasOne("zamazor_core.Models.Category", "Category")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

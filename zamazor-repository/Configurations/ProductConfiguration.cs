@@ -20,7 +20,7 @@ namespace zamazor_repository.Configurations
             builder.Property(x => x.SalePrice).HasColumnType("decimal(18,2)");
             builder.ToTable("Products");
             builder.HasOne(x => x.Supplier).WithMany().HasForeignKey(x => x.SupplierId);
-            builder.HasOne(x => x.Category).WithMany().HasForeignKey(x => x.CategoryId);
+            builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId);
         }
     }
 }

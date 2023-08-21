@@ -12,7 +12,7 @@ using zamazor_repository;
 namespace zamazor_repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230821144722_initial")]
+    [Migration("20230821182420_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -93,9 +93,6 @@ namespace zamazor_repository.Migrations
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("CategoryId1")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
 
@@ -124,8 +121,6 @@ namespace zamazor_repository.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("CategoryId1");
 
                     b.HasIndex("SupplierId");
 
@@ -327,14 +322,10 @@ namespace zamazor_repository.Migrations
             modelBuilder.Entity("zamazor_core.Models.Product", b =>
                 {
                     b.HasOne("zamazor_core.Models.Category", "Category")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("zamazor_core.Models.Category", null)
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId1");
 
                     b.HasOne("zamazor_core.Models.Company", "Supplier")
                         .WithMany()
